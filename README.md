@@ -89,7 +89,7 @@ Both endpoints validate input and return clean error messages rather than stack 
 
 - **Similarity search is O(n) per query.** Every chunk's embedding is re-deserialized and compared on each question. Fine for a handful of documents; the first real scaling step would be a proper vector index (pgvector, or a dedicated vector DB) instead of brute-force comparison in application code.
 - **Chunking is word-count based**, not sentence/paragraph-aware. It works, but can occasionally split mid-sentence. Sentence-boundary-aware chunking would improve retrieval precision.
-- **No authentication.** This is intentionally out of scope for v1 — anyone with access to the running instance can upload and query documents. Adding Spring Security (JWT) is a natural next step, and one I've implemented in other projects (see [Bookstore](https://github.com/Raj0825) for a JWT-secured example).
+- **No authentication.** This is intentionally out of scope for v1 — anyone with access to the running instance can upload and query documents. Adding Spring Security (JWT) is a natural next step, and one I've implemented in other projects.
 - **Single-document Q&A only.** No cross-document search yet.
 - **Free-tier API limits.** Gemini's free tier caps generation requests at 20/day on `gemini-2.5-flash` (as of mid-2026 — this number has changed multiple times and will likely change again). Fine for a portfolio demo, not production-ready without a paid tier.
 
