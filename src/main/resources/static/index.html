@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Askly  — Ask your documents</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="grain"></div>
+
+<header class="masthead">
+    <div class="masthead-inner">
+        <span class="mark">Askly </span>
+        <span class="tagline">Read once. Ask anything.</span>
+    </div>
+</header>
+
+<main class="container">
+
+    <section class="intro">
+        <h1>Your document,<br><em>answering for itself.</em></h1>
+        <p class="lede">Upload a PDF. Askly reads every page, then answers questions using only what's actually written inside it — with the exact passage cited every time.</p>
+    </section>
+
+    <section class="block" id="uploadBlock">
+        <div class="block-label"><span class="dot"></span>Step one</div>
+        <h2>Give it something to read</h2>
+
+        <label class="dropzone" id="dropzone" for="fileInput">
+            <input type="file" id="fileInput" accept=".pdf" hidden>
+            <div class="dropzone-content">
+                <span class="dropzone-title" id="dropzoneTitle">Choose a PDF, or drop one here</span>
+                <span class="dropzone-sub">Max 10MB · PDF only</span>
+            </div>
+        </label>
+
+        <button id="uploadBtn" class="btn-primary" disabled>Upload &amp; process</button>
+        <div class="status-line" id="uploadStatus"></div>
+    </section>
+
+    <section class="block" id="docBlock" style="display:none;">
+        <div class="block-label"><span class="dot"></span>Step two</div>
+        <h2>Pick a document</h2>
+        <div class="doc-shelf" id="docList"></div>
+    </section>
+
+    <section class="block" id="askBlock" style="display:none;">
+        <div class="block-label"><span class="dot"></span>Step three</div>
+        <h2>Ask it something</h2>
+        <p class="selected-doc" id="selectedDocLabel"></p>
+
+        <div class="ask-row">
+            <input type="text" id="questionInput" placeholder="e.g. What technology stack is used in the example?">
+            <button id="askBtn" class="btn-primary">Ask</button>
+        </div>
+
+        <div class="scan-line" id="scanLine"></div>
+
+        <div class="answer-panel" id="answerBox" style="display:none;">
+            <div class="answer-text" id="answerText"></div>
+
+            <div class="sources-header">
+                <span class="sources-rule"></span>
+                <span>Cited from the document</span>
+                <span class="sources-rule"></span>
+            </div>
+            <div class="sources-list" id="sourcesList"></div>
+        </div>
+    </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
