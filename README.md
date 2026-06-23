@@ -7,7 +7,7 @@
 ![Hibernate](https://img.shields.io/badge/Hibernate-ORM-59666C?style=for-the-badge&logo=hibernate&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-Frontend-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 
-A document Q&A system that answers questions using **only** the content of an uploaded PDF — built with Java, Spring Boot, and Google's Gemini API, with retrieval implemented from scratch (no vector database, no LangChain).
+A document Q&A system that answers questions using **only** the content of an uploaded PDF built with Java, Spring Boot, and Google's Gemini API, with retrieval implemented from scratch (no vector database, no LangChain).
 
 Most RAG (Retrieval-Augmented Generation) tutorials are Python-and-LangChain projects. This one isn't — every part of the pipeline, from chunking to cosine similarity search, is hand-written in Java on top of Spring Boot, MySQL, and a direct REST integration with Gemini.
 
